@@ -29,9 +29,5 @@ if __name__ == "__main__":
     elif method == 'dfs':
         path = dfs(G, start, goal)
         print("Using DFS. Path from start to goal:", path)
-    '''
-    elif method == 'ga':
-        path = ga(G, start, goal)
-        print("Using GA. Path from start to goal:", path)
-'''
+
     draw_maze_graph(G, maze, path)
