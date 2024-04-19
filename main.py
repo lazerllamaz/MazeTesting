@@ -5,6 +5,7 @@ from pathfinding import bfs, dfs
 from visualization import draw_maze_graph
 #from genetic_algorithm import ga
 
+''' Run using python main.py bfs|dfs '''
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python main.py [bfs|dfs]")

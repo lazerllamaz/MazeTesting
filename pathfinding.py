@@ -17,7 +17,7 @@ def dfs(graph, start, goal):
                 stack.append(neighbor)
     return None
 
-
+# slightly broken at the moment
 def bfs(graph, start, goal):
     queue = deque([start])  # Use deque for efficient append and pop from the left
     visited = set()
