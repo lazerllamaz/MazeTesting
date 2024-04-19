@@ -3,16 +3,16 @@ from maze_config import maze
 from graph_tools import create_maze_graph, find_special_points
 from pathfinding import bfs, dfs
 from visualization import draw_maze_graph
-#from genetic_algorithm import ga
+from genetic_algorithm import genetic_algorithm as ga
 
 ''' Run using python main.py bfs|dfs '''
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python main.py [bfs|dfs]")
+        print("Usage: python main.py [bfs|dfs|ga]")
         sys.exit(1)
 
     method = sys.argv[1].lower()
-    if method not in ['bfs', 'dfs']:
+    if method not in ['bfs', 'dfs', 'ga']:
         print("Invalid method. Choose 'bfs' or 'dfs'.")
         sys.exit(1)
 
@@ -31,4 +31,8 @@ if __name__ == "__main__":
         path = dfs(G, start, goal)
         print("Using DFS. Path from start to goal:", path)
 
+    elif method == 'ga':
+        path = ga(G, start, goal)
+        print("Using GA. Path from start to goal:", path)
+    
     draw_maze_graph(G, maze, path)
